@@ -80,7 +80,7 @@ export default function ModernStockInput({ value, onChange, onStockSelect, searc
   };
 
   return (
-    <div className="relative w-full animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+    <div className="relative w-full animate-fadeIn z-[100]" style={{ animationDelay: '0.1s' }}>
       <div className="relative">
         <input
           ref={inputRef}
@@ -98,7 +98,7 @@ export default function ModernStockInput({ value, onChange, onStockSelect, searc
       {showDropdown && currentResults.length > 0 && (
         <div
           ref={dropdownRef}
-          className="absolute z-[9999] w-full mt-3 bg-white rounded-2xl shadow-2xl overflow-hidden animate-fadeIn border border-gray-200"
+          className="absolute z-[99999] w-full mt-3 bg-white rounded-2xl shadow-2xl overflow-hidden animate-fadeIn border border-gray-200"
         >
           <div className="max-h-80 overflow-y-auto">
             {currentResults.map((stock, index) => (

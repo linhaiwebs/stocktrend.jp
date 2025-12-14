@@ -11,24 +11,24 @@ export default function AILogoAnimation() {
   ];
 
   return (
-    <div className="relative w-full max-w-[400px] h-[400px] mx-auto flex items-center justify-center">
+    <div className="relative w-full max-w-[280px] h-[280px] mx-auto flex items-center justify-center">
       <div className="absolute inset-0 flex items-center justify-center">
         <div
-          className="absolute w-[320px] h-[320px] rounded-full border-2 border-white/30 animate-spin-slow-reverse"
+          className="absolute w-[220px] h-[220px] rounded-full border-2 border-white/30 animate-spin-slow-reverse"
           style={{
             animationDuration: '20s',
           }}
         />
 
         <div
-          className="absolute w-[240px] h-[240px] rounded-full border-4 border-white/50 animate-spin-medium"
+          className="absolute w-[165px] h-[165px] rounded-full border-3 border-white/50 animate-spin-medium"
           style={{
             animationDuration: '12s',
           }}
         >
           {stockTerms.map((term, index) => {
             const angle = (index / stockTerms.length) * 360;
-            const radius = 120;
+            const radius = 82.5;
             const x = Math.cos((angle * Math.PI) / 180) * radius;
             const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -40,8 +40,8 @@ export default function AILogoAnimation() {
                   transform: `translate(${x}px, ${y}px) translate(-50%, -50%) rotate(-${angle}deg)`,
                 }}
               >
-                <div className="px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/80 whitespace-nowrap">
-                  <span className="text-xs font-semibold text-white">{term}</span>
+                <div className="px-2 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/80 whitespace-nowrap">
+                  <span className="text-[10px] font-semibold text-white">{term}</span>
                 </div>
               </div>
             );
@@ -49,15 +49,15 @@ export default function AILogoAnimation() {
         </div>
 
         <div
-          className="absolute w-[160px] h-[160px] rounded-full border-[6px] border-white/70 animate-spin-fast-pulse"
+          className="absolute w-[110px] h-[110px] rounded-full border-[4px] border-white/70 animate-spin-fast-pulse"
           style={{
             animationDuration: '6s',
           }}
         />
 
-        <div className="relative z-20 w-32 h-32 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 flex items-center justify-center shadow-2xl">
+        <div className="relative z-20 w-22 h-22 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 flex items-center justify-center shadow-2xl">
           <div
-            className="text-6xl font-black select-none"
+            className="text-5xl font-black select-none"
             style={{
               fontFamily: 'Arial Black, sans-serif',
               fontWeight: 900,

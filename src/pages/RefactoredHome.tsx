@@ -145,7 +145,7 @@ export default function RefactoredHome() {
 
   const runDiagnosis = async () => {
     if (diagnosisState !== 'initial') return;
-    if (!stockCode || !stockData) return;
+    if (!inputValue.trim()) return;
 
     trackDiagnosisButtonClick();
 
@@ -157,6 +157,16 @@ export default function RefactoredHome() {
 
     const minimumLoadingTime = 2000;
     const startTime = Date.now();
+
+    if (!stockData) {
+      setTimeout(() => {
+        const fixedMessage = `ボタンをタップするとLINE友だち追加画面に進みます。診断銘柄コード『${inputValue}』を送信していただくと、詳細な診断レポートを無料で受け取ることができます。`;
+        setAnalysisResult(fixedMessage);
+        setShowLoadingScene(false);
+        setDiagnosisState('results');
+      }, 2000);
+      return;
+    }
 
     if (progressIntervalRef.current) {
       clearInterval(progressIntervalRef.current);
@@ -463,8 +473,16 @@ export default function RefactoredHome() {
 
         {!showLoadingScene ? (
           <div className="flex-1 flex flex-col">
-            <div className="flex-[6] flex flex-col items-center justify-center px-2 py-4">
+            <div className="flex-[6] flex flex-col items-center justify-center px-2 py-2 -mt-8">
               <AILogoAnimation />
+              <div className="text-center mt-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                  銘柄情報分析
+                </h1>
+                <p className="text-sm md:text-base text-white/90 drop-shadow-lg">
+                  プロフェッショナル品質の分析レポートを無料でご提供
+                </p>
+              </div>
             </div>
 
             <div className="w-[95%] mx-auto mb-4">
@@ -514,7 +532,7 @@ export default function RefactoredHome() {
                 )}
 
                 {!loading && diagnosisState === 'initial' && (
-                  <ModernActionButton onClick={runDiagnosis} disabled={!inputValue || !stockCode} />
+                  <ModernActionButton onClick={runDiagnosis} disabled={!inputValue.trim()} />
                 )}
 
                 {diagnosisState === 'error' && (
