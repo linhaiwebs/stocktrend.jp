@@ -55,9 +55,9 @@ export default function AILogoAnimation() {
           }}
         />
 
-        <div className="relative z-20 w-22 h-22 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 flex items-center justify-center shadow-2xl">
+        <div className="relative z-20 w-32 h-32 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 flex items-center justify-center shadow-2xl">
           <div
-            className="text-5xl font-black select-none"
+            className="text-6xl font-black select-none"
             style={{
               fontFamily: 'Arial Black, sans-serif',
               fontWeight: 900,
