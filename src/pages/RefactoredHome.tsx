@@ -475,7 +475,7 @@ export default function RefactoredHome() {
           <div className="flex-1 flex flex-col">
             <div className="flex-[6] flex flex-col items-center justify-center px-2 py-2 -mt-8">
               <AILogoAnimation />
-              <div className="text-center mt-4">
+              <div className="text-center mt-1">
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
                   銘柄情報分析
                 </h1>
