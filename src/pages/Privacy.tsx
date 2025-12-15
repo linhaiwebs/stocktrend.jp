@@ -133,28 +133,6 @@ export default function Privacy() {
                 変更後のポリシーは、当サービス上に掲載された時点から効力を生じるものとします。
               </p>
             </section>
-
-            <div className="bg-slate-100 rounded-lg p-6 mt-8">
-              <h3 className="font-bold text-gray-900 mb-3">お問い合わせ</h3>
-              <p className="text-sm text-gray-700 mb-2">
-                本ポリシーに関するご質問、個人情報の取り扱いに関するご相談は、お問い合わせフォームよりご連絡ください。
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                <strong>株式会社アドバンス (Advance Co., Ltd.)</strong>
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                〒101-0032 東京都千代田区岩本町2-8-2 都ビジネスビル9階
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                設立: 2012年10月
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                メール: support@aisbistock.com
-              </p>
-              <p className="text-sm text-gray-700">
-                受付時間: 24時間受付（返信は営業日内）
-              </p>
-            </div>
           </div>
         </div>
       </div>
