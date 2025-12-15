@@ -14,14 +14,14 @@ export default function AILogoAnimation() {
     <div className="relative w-full max-w-[360px] h-[360px] mx-auto flex items-center justify-center">
       <div className="absolute inset-0 flex items-center justify-center">
         <div
-          className="absolute w-[285px] h-[285px] rounded-full border-2 border-white/30 animate-spin-slow-reverse"
+          className="absolute w-[285px] h-[285px] rounded-full border-2 border-white/15 animate-spin-slow-reverse"
           style={{
             animationDuration: '20s',
           }}
         />
 
         <div
-          className="absolute w-[215px] h-[215px] rounded-full border-3 border-white/50 animate-spin-medium"
+          className="absolute w-[215px] h-[215px] rounded-full border-3 border-white/25 animate-spin-medium"
           style={{
             animationDuration: '12s',
           }}
@@ -40,7 +40,7 @@ export default function AILogoAnimation() {
                   transform: `translate(${x}px, ${y}px) translate(-50%, -50%) rotate(-${angle}deg)`,
                 }}
               >
-                <div className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/80 whitespace-nowrap">
+                <div className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/50 whitespace-nowrap">
                   <span className="text-xs font-semibold text-white">{term}</span>
                 </div>
               </div>
@@ -49,13 +49,13 @@ export default function AILogoAnimation() {
         </div>
 
         <div
-          className="absolute w-[143px] h-[143px] rounded-full border-[5px] border-white/70 animate-spin-fast-pulse"
+          className="absolute w-[143px] h-[143px] rounded-full border-[5px] border-white/40 animate-spin-fast-pulse"
           style={{
             animationDuration: '6s',
           }}
         />
 
-        <div className="relative z-20 w-32 h-32 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 flex items-center justify-center shadow-2xl">
+        <div className="relative z-20 w-32 h-32 rounded-full bg-gradient-to-br from-emerald-300 via-teal-400 to-cyan-500 flex items-center justify-center shadow-2xl animate-gentle-pulse">
           <div
             className="text-6xl font-black select-none"
             style={{
@@ -63,7 +63,7 @@ export default function AILogoAnimation() {
               fontWeight: 900,
               fontStyle: 'italic',
               transform: 'skewX(-10deg)',
-              background: 'linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%)',
+              background: 'linear-gradient(135deg, #065f46 0%, #047857 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -112,6 +112,15 @@ export default function AILogoAnimation() {
           }
         }
 
+        @keyframes gentle-pulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(0.96);
+          }
+        }
+
         .animate-spin-slow-reverse {
           animation: spin-slow-reverse linear infinite;
         }
@@ -122,6 +131,10 @@ export default function AILogoAnimation() {
 
         .animate-spin-fast-pulse {
           animation: spin-fast-pulse linear infinite;
+        }
+
+        .animate-gentle-pulse {
+          animation: gentle-pulse 3s ease-in-out infinite;
         }
       `}</style>
     </div>

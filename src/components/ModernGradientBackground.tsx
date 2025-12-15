@@ -4,7 +4,7 @@ export default function ModernGradientBackground() {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          background: 'linear-gradient(180deg, #0a1929 0%, #1e3a5f 50%, #4a7ba7 100%)'
+          background: 'linear-gradient(180deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%)'
         }}
       />
     </div>
