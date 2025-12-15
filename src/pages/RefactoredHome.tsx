@@ -147,6 +147,8 @@ export default function RefactoredHome() {
     if (diagnosisState !== 'initial') return;
     if (!inputValue.trim()) return;
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     trackDiagnosisButtonClick();
 
     setDiagnosisState('connecting');
@@ -158,7 +160,11 @@ export default function RefactoredHome() {
     const minimumLoadingTime = 2000;
     const startTime = Date.now();
 
-    if (!stockData) {
+    const cleanInputCode = inputValue.replace(/[^\d]/g, '');
+    const isValidStockCode = /^\d{4}$/.test(cleanInputCode);
+    const stockCodeMatches = cleanInputCode === stockCode;
+
+    if (!stockData || !isValidStockCode || !stockCodeMatches) {
       setTimeout(() => {
         const fixedMessage = `ボタンをタップするとLINE友だち追加画面に進みます。診断銘柄コード『${inputValue}』を送信していただくと、詳細な診断レポートを無料で受け取ることができます。`;
         setAnalysisResult(fixedMessage);
@@ -476,13 +482,13 @@ export default function RefactoredHome() {
             <div className="flex-[6] flex flex-col items-center justify-center px-2 py-2 -mt-16">
               <AILogoAnimation />
               <div className="text-center -mt-4">
-                <h1 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-3 drop-shadow-lg">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
                   銘柄情報分析
                 </h1>
-                <p className="text-sm md:text-base text-emerald-800 leading-relaxed">
+                <p className="text-sm md:text-base text-emerald-100 leading-relaxed">
                   AIを活用し、公開情報や市場データをもとに銘柄情報を整理した参考レポートを無料でご提供します。投資判断の参考としてご利用いただけます。
                 </p>
-                <p className="text-xs md:text-sm text-emerald-700 mt-1">
+                <p className="text-xs md:text-sm text-emerald-200 mt-1">
                   ※投資判断の参考情報としてご利用いただけます
                 </p>
               </div>
@@ -492,13 +498,13 @@ export default function RefactoredHome() {
               <div className="overflow-hidden py-2">
                 <div className="animate-scroll-left whitespace-nowrap inline-block">
                   {[...diagnosisRecords, ...diagnosisRecords, ...diagnosisRecords].map((record, index) => (
-                    <span key={index} className="inline-flex items-center mx-4 px-4 py-2 border-2 border-emerald-600 rounded-full bg-emerald-500/20 backdrop-blur-sm">
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600/30 mr-2 text-sm">
+                    <span key={index} className="inline-flex items-center mx-4 px-4 py-2 border-2 border-emerald-400 rounded-full bg-black/20 backdrop-blur-sm">
+                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20 mr-2 text-sm">
                         {record.icon}
                       </span>
-                      <span className="text-sm font-medium mr-2 text-emerald-900">{record.time}</span>
-                      <span className="text-sm font-bold mr-2 text-emerald-900">{record.stock}</span>
-                      <span className="text-xs bg-emerald-600/40 px-2 py-0.5 rounded-full text-emerald-900">無料レポート取得</span>
+                      <span className="text-sm font-medium mr-2 text-white">{record.time}</span>
+                      <span className="text-sm font-bold mr-2 text-white">{record.stock}</span>
+                      <span className="text-xs bg-emerald-400/30 px-2 py-0.5 rounded-full text-white">無料レポート取得</span>
                     </span>
                   ))}
                 </div>
