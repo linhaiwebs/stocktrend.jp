@@ -479,8 +479,11 @@ export default function RefactoredHome() {
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
                   銘柄情報分析
                 </h1>
-                <p className="text-sm md:text-base text-white/90 drop-shadow-lg">
-                  プロフェッショナル品質の分析レポートを無料でご提供
+                <p className="text-sm md:text-base text-white/90 drop-shadow-lg leading-relaxed">
+                  AIを活用し、公開情報や市場データをもとに銘柄情報を整理した参考レポートを無料でご提供します。投資判断の参考としてご利用いただけます。
+                </p>
+                <p className="text-xs md:text-sm text-white/80 drop-shadow-lg mt-1">
+                  ※投資判断の参考情報としてご利用いただけます
                 </p>
               </div>
             </div>
@@ -570,6 +573,9 @@ export default function RefactoredHome() {
         onReportDownload={handleReportDownload}
         isStreaming={diagnosisState === 'streaming'}
         isConnecting={diagnosisState === 'connecting'}
+        currentPrice={stockData?.info.price}
+        priceChange={stockData?.info.change}
+        priceChangePercent={stockData?.info.changePercent}
       />
     </div>
   );

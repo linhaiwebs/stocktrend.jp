@@ -163,19 +163,10 @@ export default function Contact() {
                 運営会社情報
               </h3>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>会社名:</strong> 株式会社アドバンス（Advance Co., Ltd.）
+                <strong>運営者名:</strong> Shueisha International Co., Ltd.
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>所在地:</strong> 〒101-0032 東京都千代田区岩本町2-8-2 都ビジネスビル9階
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                <strong>設立:</strong> 2012年10月
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                <strong>業種:</strong> デジタルマーケティング／広告戦略・運用／データ分析
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                <strong>メールアドレス:</strong> support@aisbistock.com
+                <strong>お問い合わせ:</strong> support@stockpro.jp
               </p>
               <p className="text-sm text-gray-700">
                 <strong>受付時間:</strong> 24時間受付（返信は営業日内）

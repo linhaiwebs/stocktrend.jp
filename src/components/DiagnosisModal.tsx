@@ -13,6 +13,9 @@ interface DiagnosisModalProps {
   onReportDownload: () => void;
   isStreaming?: boolean;
   isConnecting?: boolean;
+  currentPrice?: string;
+  priceChange?: string;
+  priceChangePercent?: string;
 }
 
 export default function DiagnosisModal({
@@ -25,6 +28,9 @@ export default function DiagnosisModal({
   onReportDownload,
   isStreaming = false,
   isConnecting = false,
+  currentPrice,
+  priceChange,
+  priceChangePercent,
 }: DiagnosisModalProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   const lastLengthRef = useRef(0);
@@ -68,7 +74,7 @@ export default function DiagnosisModal({
           >
           <div className="flex-1 text-center">
             <h2 className="text-sm font-bold text-white">
-              {stockName}（{stockCode}）AI分析レポート
+              AI銘柄情報レポート（参考情報）
             </h2>
             {isConnecting && (
               <div className="flex items-center gap-2 text-white text-sm justify-center mt-2">
@@ -94,6 +100,36 @@ export default function DiagnosisModal({
 
         <div ref={contentRef} className="overflow-y-auto max-h-[calc(95vh-180px)] px-2 py-2">
           <div className="mb-6">
+            {!isConnecting && currentPrice && (
+              <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
+                <p className="text-sm text-gray-800 leading-relaxed mb-3">
+                  ご入力いただいた<strong className="text-blue-700">{stockName}（{stockCode}）</strong>について、市場データと独自AIロジックをもとに銘柄情報を整理しました。
+                </p>
+                <div className="bg-white rounded-lg p-3 mb-3 border border-blue-100">
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-xs text-gray-600">現在株価：</span>
+                    <span className="text-lg font-bold text-gray-900">{currentPrice} 円</span>
+                  </div>
+                  {priceChange && priceChangePercent && (
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xs text-gray-600">前日比：</span>
+                      <span className={`text-sm font-semibold ${parseFloat(priceChange) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                        {priceChange} 円（{priceChangePercent}）
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-xs text-gray-700 leading-relaxed mb-2">
+                  より詳しい株価情報レポートは、LINEでご確認いただけます。<br />
+                  「AI 株式アシスタント」LINE公式アカウントを追加してください。
+                </p>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  LINE追加後、銘柄コードまたは銘柄名<br />
+                  （例：{stockCode}／{stockName}）<br />
+                  を送信すると、参考レポートを自動でお届けします。
+                </p>
+              </div>
+            )}
 
             <div className="rounded-xl p-2 shadow-inner relative border" style={{ backgroundColor: '#ECFEFF', borderColor: '#67E8F9' }}>
               <div className="prose prose-sm max-w-none">
@@ -119,14 +155,14 @@ export default function DiagnosisModal({
               className="w-full bg-gradient-to-r from-[#06C755] to-[#05b04b] hover:from-[#05b04b] hover:to-[#049c42] text-white font-bold py-4 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-sm mt-2"
             >
               <ExternalLink className="w-6 h-6 flex-shrink-0" />
-              <span>LINE追加で無料分析レポートを入手</span>
+              <span>LINE追加で無料レポートを見る</span>
             </button>
 
             <div className="mt-3 p-4 rounded-lg border" style={{ backgroundColor: '#FFF7ED', borderColor: '#FB923C' }}>
               <div className="flex items-start gap-2 mb-2">
                 <ExternalLink className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#EA580C' }} />
                 <p className="text-sm font-bold" style={{ color: '#9A3412' }}>
-                  【重要】AI分析による優良ブルーチップ銘柄を毎日お届け！
+                  【重要】AIを活用した銘柄情報（参考）をご案内しています
                 </p>
               </div>
               <ul className="text-xs text-gray-800 leading-relaxed space-y-1.5 ml-1">
@@ -136,15 +172,15 @@ export default function DiagnosisModal({
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-orange-600 font-bold mt-0.5">•</span>
-                  <span>LINEは当サービスとは<strong>独立した別のサービス</strong>です。</span>
+                  <span>LINEは当サービスとは<strong>独立した外部サービス</strong>です。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold mt-0.5">✓</span>
-                  <span><strong className="text-green-700">完全無料</strong>：LINEへの移動後も追加料金は一切かかりません。</span>
+                  <span><strong className="text-green-700">利用無料</strong>：LINEへの移動後も追加料金は発生しません。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold mt-0.5">✓</span>
-                  <span>LINE友だち追加で毎日最新のAI分析レポートが受け取れます。</span>
+                  <span>LINE友だち追加後、銘柄情報に関する参考レポートをご確認いただけます。</span>
                 </li>
               </ul>
             </div>

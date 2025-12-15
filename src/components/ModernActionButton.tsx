@@ -16,13 +16,21 @@ export default function ModernActionButton({ onClick, disabled = false }: Modern
             height: '56px'
           }}
         >
-          <span className="text-lg">診断を開始する</span>
+          <span className="text-lg">分析を確認する（無料）</span>
         </button>
       </div>
-      <div className="mt-4 text-center">
-        <p className="text-xs text-gray-500 leading-relaxed">
-          ※本診断は投資助言ではありません。投資判断は自己責任でお願いいたします。
+      <div className="mt-4 text-center space-y-3">
+        <p className="text-xs text-gray-600 leading-relaxed">
+          本サービスは「情報提供サービス」であり、投資助言ではありません。
         </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+          <p className="text-xs font-semibold text-gray-800 mb-1">重要なお知らせ</p>
+          <p className="text-xs text-gray-700 leading-relaxed">
+            本サービスは、一般的な情報提供を目的としたものであり、<br />
+            特定の銘柄の売買を推奨・助言するものではありません。<br />
+            最終的な投資判断は、必ずご自身の責任において行ってください。
+          </p>
+        </div>
       </div>
     </>
   );

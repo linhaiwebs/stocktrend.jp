@@ -138,7 +138,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-1 text-white drop-shadow-lg">
                   <Mail className="w-3 h-3" />
-                  <span>support@aisbistock.com</span>
+                  <span>support@stockpro.jp</span>
                 </li>
                 <li className="text-white/80 drop-shadow-lg text-xs">
                   受付時間: 24時間受付（返信は営業日内）
@@ -150,7 +150,13 @@ export default function Footer() {
           {/* Copyright Section */}
           <div className="border-t border-white/30 pt-4 text-center">
             <p className="text-xs sm:text-sm text-white drop-shadow-lg mb-2 font-medium">
-              &copy; {currentYear} 株式会社アドバンス (Advance Co., Ltd.). All rights reserved.
+              運営者名：Shueisha International Co., Ltd.
+            </p>
+            <p className="text-xs sm:text-sm text-white drop-shadow-lg mb-2 font-medium">
+              お問い合わせ：support@stockpro.jp
+            </p>
+            <p className="text-xs sm:text-sm text-white drop-shadow-lg mb-2 font-medium">
+              &copy; {currentYear} Shueisha International Co., Ltd. All rights reserved.
             </p>
             <p className="text-[10px] sm:text-xs text-white/90 drop-shadow-lg leading-relaxed max-w-3xl mx-auto mb-4">
               当サイトで提供される情報は投資勧誘を目的としたものではありません。
