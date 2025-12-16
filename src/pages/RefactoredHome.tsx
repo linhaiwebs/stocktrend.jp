@@ -165,7 +165,15 @@ export default function RefactoredHome() {
 
     if (!stockData || !isValidStockCode || !stockCodeMatches) {
       setTimeout(() => {
-        const fixedMessage = `ボタンをタップするとLINE友だち追加画面に進みます。診断銘柄コード『${inputValue}』を送信していただくと、詳細な診断レポートを無料で受け取ることができます。`;
+        let fixedMessage = '';
+        const trimmedInput = inputValue.trim();
+
+        if (!trimmedInput || trimmedInput === '') {
+          fixedMessage = `ボタンをタップするとLINE友だち追加画面に進みます。LINE追加後、診断したい銘柄コードまたは銘柄名を送信していただくと、詳細な診断レポートを無料で受け取ることができます。\n\n例：「7203」または「トヨタ自動車」と送信してください。`;
+        } else {
+          fixedMessage = `ボタンをタップするとLINE友だち追加画面に進みます。診断銘柄『${trimmedInput}』をLINEで送信していただくと、詳細な診断レポートを無料で受け取ることができます。\n\n銘柄コードは4桁の数字（例：7203）で入力してください。`;
+        }
+
         setAnalysisResult(fixedMessage);
         setShowLoadingScene(false);
         setDiagnosisState('results');
