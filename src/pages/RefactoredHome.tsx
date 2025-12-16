@@ -145,7 +145,6 @@ export default function RefactoredHome() {
 
   const runDiagnosis = async () => {
     if (diagnosisState !== 'initial') return;
-    if (!inputValue.trim()) return;
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -541,7 +540,7 @@ export default function RefactoredHome() {
                 )}
 
                 {!loading && diagnosisState === 'initial' && (
-                  <ModernActionButton onClick={runDiagnosis} disabled={!inputValue.trim()} />
+                  <ModernActionButton onClick={runDiagnosis} disabled={false} />
                 )}
 
                 {diagnosisState === 'error' && (

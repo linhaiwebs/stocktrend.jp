@@ -100,7 +100,7 @@ export default function DiagnosisModal({
 
         <div ref={contentRef} className="overflow-y-auto max-h-[calc(95vh-180px)] px-2 py-2">
           <div className="mb-6">
-            {!isConnecting && currentPrice && (
+            {currentPrice && (
               <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
                 <p className="text-sm text-gray-800 leading-relaxed mb-3">
                   ご入力いただいた<strong className="text-blue-700">{stockName}（{stockCode}）</strong>について、市場データと独自AIロジックをもとに銘柄情報を整理しました。
