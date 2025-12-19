@@ -13,16 +13,35 @@ const diagnosisRecords = [
 
 export default function DiagnosisTicker() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 overflow-hidden bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 py-2 shadow-lg">
+    <div
+      className="fixed top-0 left-0 right-0 z-50 overflow-hidden py-2 shadow-lg"
+      style={{
+        background: 'linear-gradient(135deg, #FF0080 0%, #7928CA 50%, #0070F3 100%)',
+      }}
+    >
       <div className="animate-scroll-left whitespace-nowrap inline-block">
         {[...diagnosisRecords, ...diagnosisRecords, ...diagnosisRecords].map((record, index) => (
-          <span key={index} className="inline-flex items-center mx-4 text-white">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20 mr-2 text-sm">
+          <span key={index} className="inline-flex items-center mx-4" style={{ color: '#FFFFFF' }}>
+            <span
+              className="inline-flex items-center justify-center w-6 h-6 mr-2 text-sm"
+              style={{
+                background: 'rgba(255, 255, 255, 0.25)',
+                clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)',
+              }}
+            >
               {record.icon}
             </span>
-            <span className="text-sm font-medium mr-2 text-yellow-200">{record.time}</span>
+            <span className="text-sm font-medium mr-2" style={{ color: '#E0E0E0' }}>{record.time}</span>
             <span className="text-sm font-bold mr-2">{record.stock}</span>
-            <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">無料レポート取得</span>
+            <span
+              className="text-xs px-2 py-0.5"
+              style={{
+                background: 'rgba(255, 255, 255, 0.25)',
+                clipPath: 'polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%)',
+              }}
+            >
+              無料レポート取得
+            </span>
           </span>
         ))}
       </div>
