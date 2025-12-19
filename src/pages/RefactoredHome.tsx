@@ -486,9 +486,9 @@ export default function RefactoredHome() {
 
         {!showLoadingScene ? (
           <div className="flex-1 flex flex-col">
-            <div className="flex-[6] flex flex-col items-center justify-center px-2 py-2 -mt-16">
+            <div className="flex-[6] flex flex-col items-center justify-center px-2 py-2 -mt-8">
               <AILogoAnimation />
-              <div className="text-center -mt-6">
+              <div className="text-center -mt-2">
                 <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#000000' }}>
                   銘柄情報分析
                 </h1>
