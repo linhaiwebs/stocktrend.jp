@@ -78,15 +78,15 @@ export default function LoadingProgressBars({ isVisible }: LoadingProgressBarsPr
         <div key={index} className="space-y-1">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-white">{stage.label}</span>
-            <span className="text-[10px] text-gray-300">{Math.floor(stage.progress)}%</span>
+            <span className="text-[10px] font-bold text-white">{Math.floor(stage.progress)}%</span>
           </div>
-          <div className="relative w-full h-1.5 bg-gray-800/50 rounded-full overflow-hidden border border-purple-500/30">
+          <div className="relative w-full h-2 bg-white/20 rounded-full overflow-hidden border-2 border-purple-400/60">
             <div
               className="absolute top-0 left-0 h-full transition-all duration-300 ease-out rounded-full"
               style={{
                 width: `${stage.progress}%`,
                 backgroundColor: stage.color,
-                boxShadow: `0 0 8px ${stage.color}80`,
+                boxShadow: `0 0 12px ${stage.color}, 0 0 24px ${stage.color}80`,
               }}
             />
           </div>

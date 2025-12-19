@@ -12,10 +12,10 @@ export default function InlineLoadingScene({ isVisible }: InlineLoadingSceneProp
   return (
     <div className="w-full max-w-lg mx-auto px-4 animate-fadeIn">
       <div className="text-center mb-4">
-        <h2 className="text-lg md:text-xl font-bold text-white mb-1">
+        <h2 className="text-lg md:text-xl font-bold text-white mb-1 drop-shadow-lg">
           AI正在分析報告
         </h2>
-        <p className="text-xs md:text-sm text-gray-200">
+        <p className="text-xs md:text-sm text-white font-medium drop-shadow-md">
           数秒お待ちください...
         </p>
       </div>
@@ -30,7 +30,7 @@ export default function InlineLoadingScene({ isVisible }: InlineLoadingSceneProp
       </div>
 
       <div className="mt-4 text-center">
-        <p className="text-[10px] text-gray-300 leading-relaxed">
+        <p className="text-[10px] text-white/90 leading-relaxed drop-shadow-sm">
           すべてのデータは公開されている市場情報を使用しており、
           <br className="hidden sm:inline" />
           公開市場データに基づいて分析を行っています
