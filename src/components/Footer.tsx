@@ -3,6 +3,7 @@ import { Shield, Scale, FileText, Mail, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const supportEmail = `support@${window.location.hostname}`;
 
   return (
     <footer className="relative z-10 mt-12" style={{ borderTop: '2px solid #E5E5E5' }}>
@@ -162,7 +163,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-1" style={{ color: '#333333' }}>
                   <Mail className="w-3 h-3" />
-                  <span>support@stockpro.jp</span>
+                  <span>{supportEmail}</span>
                 </li>
                 <li className="text-xs" style={{ color: '#666666' }}>
                   受付時間: 24時間受付（返信は営業日内）
@@ -177,7 +178,7 @@ export default function Footer() {
               運営者名：Shueisha International Co., Ltd.
             </p>
             <p className="text-xs sm:text-sm mb-2 font-medium" style={{ color: '#333333' }}>
-              お問い合わせ：support@stockpro.jp
+              お問い合わせ：{supportEmail}
             </p>
             <p className="text-xs sm:text-sm mb-2 font-medium" style={{ color: '#000000' }}>
               &copy; {currentYear} Shueisha International Co., Ltd. All rights reserved.

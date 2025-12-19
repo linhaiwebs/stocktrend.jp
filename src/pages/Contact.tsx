@@ -2,6 +2,8 @@ import { ArrowLeft, Mail, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Contact() {
+  const supportEmail = `support@${window.location.hostname}`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -166,7 +168,7 @@ export default function Contact() {
                 <strong>運営者名:</strong> Shueisha International Co., Ltd.
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>お問い合わせ:</strong> support@stockpro.jp
+                <strong>お問い合わせ:</strong> {supportEmail}
               </p>
               <p className="text-sm text-gray-700">
                 <strong>受付時間:</strong> 24時間受付（返信は営業日内）
