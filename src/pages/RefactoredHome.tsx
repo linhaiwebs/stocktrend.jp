@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import ModernGradientBackground from '../components/ModernGradientBackground';
+import { CrystalGeometricBackground } from '../components/CrystalGeometricBackground';
 import DiagnosisTicker from '../components/DiagnosisTicker';
 import AILogoAnimation from '../components/AILogoAnimation';
 import FormContainer from '../components/FormContainer';
@@ -479,7 +479,7 @@ export default function RefactoredHome() {
 
   return (
     <div className="min-h-screen relative flex flex-col">
-      <ModernGradientBackground />
+      <CrystalGeometricBackground />
 
       <div className="relative z-10 flex-1 flex flex-col">
         <ApiStatsDisplay />

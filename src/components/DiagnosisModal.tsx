@@ -67,10 +67,21 @@ export default function DiagnosisModal({
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black bg-opacity-75" style={{ touchAction: 'none' }}>
       <div className="relative w-full max-w-3xl max-h-[95vh]">
-        <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden border-2" style={{ touchAction: 'auto', borderColor: '#06B6D4' }}>
+        <div
+          className="relative shadow-2xl overflow-hidden"
+          style={{
+            touchAction: 'auto',
+            background: '#FFFFFF',
+            clipPath: 'polygon(1% 0%, 99% 0%, 100% 1%, 100% 99%, 99% 100%, 1% 100%, 0% 99%, 0% 1%)',
+            border: '3px solid transparent',
+            backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #FF0080, #7928CA, #0070F3)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box',
+          }}
+        >
           <div
-            className="sticky top-0 flex items-center justify-between"
-            style={{ background: 'linear-gradient(135deg, #06B6D4 0%, #0284C7 100%)' }}
+            className="sticky top-0 flex items-center justify-between px-4 py-3"
+            style={{ background: 'linear-gradient(135deg, #FF0080 0%, #7928CA 50%, #0070F3 100%)' }}
           >
           <div className="flex-1 text-center">
             <h2 className="text-sm font-bold text-white">
@@ -101,7 +112,14 @@ export default function DiagnosisModal({
         <div ref={contentRef} className="overflow-y-auto max-h-[calc(95vh-180px)] px-2 py-2">
           <div className="mb-6">
             {currentPrice ? (
-              <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
+              <div
+                className="mb-4 p-4"
+                style={{
+                  background: 'linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%)',
+                  clipPath: 'polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0% 98%, 0% 2%)',
+                  border: '2px solid #E5E5E5',
+                }}
+              >
                 <p className="text-sm text-gray-800 leading-relaxed mb-3">
                   ご入力いただいた<strong className="text-blue-700">{stockName}（{stockCode}）</strong>について、市場データと独自AIロジックをもとに銘柄情報を整理しました。
                 </p>
@@ -130,7 +148,14 @@ export default function DiagnosisModal({
                 </p>
               </div>
             ) : (
-              <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+              <div
+                className="mb-4 p-4"
+                style={{
+                  background: 'linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%)',
+                  clipPath: 'polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0% 98%, 0% 2%)',
+                  border: '2px solid #FB923C',
+                }}
+              >
                 <p className="text-sm text-gray-800 leading-relaxed font-semibold mb-2">
                   📱 LINE で詳細な銘柄診断レポートを受け取る
                 </p>
@@ -162,7 +187,12 @@ export default function DiagnosisModal({
 
             <button
               onClick={onLineConversion}
-              className="w-full bg-gradient-to-r from-[#06C755] to-[#05b04b] hover:from-[#05b04b] hover:to-[#049c42] text-white font-bold py-4 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-sm mt-2"
+              className="w-full text-white font-bold py-4 px-6 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-sm mt-2"
+              style={{
+                background: 'linear-gradient(135deg, #06C755 0%, #05b04b 100%)',
+                clipPath: 'polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0% 98%, 0% 2%)',
+                border: 'none',
+              }}
             >
               <ExternalLink className="w-6 h-6 flex-shrink-0" />
               <span>LINE追加で無料レポートを見る</span>

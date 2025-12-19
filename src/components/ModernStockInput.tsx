@@ -82,23 +82,53 @@ export default function ModernStockInput({ value, onChange, onStockSelect, searc
   return (
     <div className="relative w-full animate-fadeIn z-[100]" style={{ animationDelay: '0.1s' }}>
       <div className="relative">
-        <input
-          ref={inputRef}
-          type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          onFocus={handleInputFocus}
-          placeholder="例: 7203 / トヨタ / ソニー"
-          className="w-full px-4 py-3 text-base text-gray-900 bg-[#F4F4F4] rounded-xl border-0 focus:ring-2 focus:ring-gray-300 focus:outline-none placeholder-gray-400 transition-all duration-200"
-          style={{ height: '52px' }}
-          disabled={isLoading}
-        />
+        <div className="relative" style={{
+          clipPath: 'polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0% 98%, 0% 2%)',
+        }}>
+          <input
+            ref={inputRef}
+            type="text"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={handleInputFocus}
+            placeholder="例: 7203 / トヨタ / ソニー"
+            className="w-full px-5 py-4 text-base font-medium focus:outline-none placeholder-gray-400 transition-all duration-300"
+            style={{
+              height: '60px',
+              background: 'linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 100%)',
+              color: '#000000',
+              border: '2px solid transparent',
+              backgroundClip: 'padding-box',
+              position: 'relative',
+            }}
+            disabled={isLoading}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(135deg, #FF0080, #7928CA, #0070F3)',
+              clipPath: 'polygon(2% 0%, 98% 0%, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0% 98%, 0% 2%)',
+              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMaskComposite: 'xor',
+              maskComposite: 'exclude',
+              padding: '2px',
+            }}
+          />
+        </div>
       </div>
 
       {showDropdown && currentResults.length > 0 && (
         <div
           ref={dropdownRef}
-          className="absolute z-[99999] w-full mt-3 bg-white rounded-2xl shadow-2xl overflow-hidden animate-fadeIn border border-gray-200"
+          className="absolute z-[99999] w-full mt-3 shadow-2xl overflow-hidden animate-fadeIn"
+          style={{
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%)',
+            clipPath: 'polygon(1% 0%, 99% 0%, 100% 1%, 100% 99%, 99% 100%, 1% 100%, 0% 99%, 0% 1%)',
+            border: '2px solid transparent',
+            backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #FF0080, #7928CA, #0070F3)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box',
+          }}
         >
           <div className="max-h-80 overflow-y-auto">
             {currentResults.map((stock, index) => (
